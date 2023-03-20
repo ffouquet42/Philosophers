@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   setup.c                                            :+:      :+:    :+:   */
+/*   verification.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/20 17:44:40 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/20 18:00:15 by fllanet          ###   ########.fr       */
+/*   Created: 2023/03/20 17:58:14 by fllanet           #+#    #+#             */
+/*   Updated: 2023/03/20 17:59:58 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philosophers.h"
 
-void	ft_setup(char **argv)
+int	ft_check_argv(char **argv)
 {
-	printf("ft_setup\n");
+	return (0);
 }
