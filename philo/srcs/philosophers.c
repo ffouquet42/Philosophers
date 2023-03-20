@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 17:33:40 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/20 18:03:46 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/20 18:16:28 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,14 @@
 
 int	main(int argc, char **argv)
 {
-	printf("\n\n\n"); // dev
-	
 	if (argc == 5 || argc == 6)
 	{
 		if (ft_check_argv(argv))
-			return (printf("ARGV ERROR\n"), 0); // *
+			return (1);
 		else
 			ft_setup(argv);
 	}
 	else
-		printf("Incorrect number of arguments\n");
-
-	printf("\n\n\n"); // dev
-
+		return (printf("Incorrect number of arguments\n"), 1);
 	return (0);
 }
