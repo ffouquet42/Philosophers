@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philosophers.h                                     :+:      :+:    :+:   */
+/*   setup.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/20 17:31:45 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/20 17:49:41 by fllanet          ###   ########.fr       */
+/*   Created: 2023/03/20 17:44:40 by fllanet           #+#    #+#             */
+/*   Updated: 2023/03/20 17:49:28 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHILOSOPHERS_H
-# define PHILOSOPHERS_H
+#include "../includes/philosophers.h"
 
-
-// ---------- INCLUDES ---------- //
-# include <stdio.h>
-
-
-// ---------- STRUCTURES ---------- //
-
-// ---------- PROTOTYPES ---------- //
-
-// ---------- philosophers.c ---------- //
-int	main(int argc, char **argv);
-
-// ---------- setup.c ---------- //
-void	ft_setup(void);
-
-#endif
+void	ft_setup(void)
+{
+	printf("hello\n");
+}

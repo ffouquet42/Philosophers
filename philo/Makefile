@@ -1,5 +1,6 @@
 
 SRCS		=	srcs/philosophers.c								\
+				srcs/setup.c									\
 
 OBJS		=	$(SRCS:.c=.o)
 
