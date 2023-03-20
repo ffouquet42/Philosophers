@@ -2,6 +2,8 @@
 SRCS		=	srcs/philosophers.c								\
 				srcs/verification.c								\
 				srcs/setup.c									\
+				srcs/utils.c									\
+				srcs/print.c									\
 
 OBJS		=	$(SRCS:.c=.o)
 

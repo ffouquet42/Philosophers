@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 17:31:45 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/20 18:40:59 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/20 23:29:30 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,25 @@
 // ---------- INCLUDES ---------- //
 # include <stdio.h>
 # include <limits.h>
+# include <stdlib.h>
 
 // ---------- STRUCTURES ---------- //
+
+typedef struct s_data
+{
+	long	nb_of_philosophers;
+	long	time_to_die;
+	long	time_to_eat;
+	long	time_to_sleep;
+	long	must_eat;
+	int		end_condition; // *
+}	t_data;
+
+typedef struct s_philosopher
+{
+	int	id;
+}	t_philosopher;
+
 
 // ---------- PROTOTYPES ---------- //
 
@@ -32,5 +49,15 @@ int		ft_check_int_max(char *str);
 
 // ---------- setup.c ---------- //
 void	ft_setup(char **argv);
+t_data	*ft_setup_data(char **argv);
 
+// ---------- utils.c ---------- //
+long	ft_atoi(char *str);
+
+// ---------- print.c ---------- //
+
+
+// DEV
+
+void ft_print_data(t_data *data);
 #endif
