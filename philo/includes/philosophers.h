@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 17:31:45 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/20 23:29:30 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/21 12:53:04 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdio.h>
 # include <limits.h>
 # include <stdlib.h>
+# include <sys/time.h>
 
 // ---------- STRUCTURES ---------- //
 
@@ -52,7 +53,7 @@ void	ft_setup(char **argv);
 t_data	*ft_setup_data(char **argv);
 
 // ---------- utils.c ---------- //
-long	ft_atoi(char *str);
+long	ft_atoi_long(char *str);
 
 // ---------- print.c ---------- //
 

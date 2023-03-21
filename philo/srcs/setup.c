@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 17:44:40 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/20 23:29:16 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/21 12:47:12 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ t_data	*ft_setup_data(char **argv)
 	data = malloc(sizeof(t_data));
 	if (!data)
 		return (NULL);
-	data->nb_of_philosophers = ft_atoi(argv[1]);
-	data->time_to_die = ft_atoi(argv[2]) * 1000;
-	data->time_to_eat = ft_atoi(argv[3]) * 1000;
-	data->time_to_sleep = ft_atoi(argv[4]) * 1000;
+	data->nb_of_philosophers = ft_atoi_long(argv[1]);
+	data->time_to_die = ft_atoi_long(argv[2]) * 1000;
+	data->time_to_eat = ft_atoi_long(argv[3]) * 1000;
+	data->time_to_sleep = ft_atoi_long(argv[4]) * 1000;
 	if (argv[5])
 	{
-		data->must_eat = ft_atoi(argv[5]);
+		data->must_eat = ft_atoi_long(argv[5]);
 		data->end_condition = 1;
 	}
 	else
@@ -36,15 +36,25 @@ t_data	*ft_setup_data(char **argv)
 	return (data);
 }
 
+int	ft_check_setup_data(t_data *data)
+{
+	if (!data)
+		return (1);
+	else if (data->nb_of_philosophers <= 0)
+		return (printf("No philosopher detected\n"), 1);
+	return (0);
+}
+
 void	ft_setup(char **argv)
 {
 	t_data			*data;
-	t_philosopher	*philosopher;
+	// t_philosopher	*philosopher;
 
 	data = ft_setup_data(argv);
-	if (!data)
-		return ;
-	ft_print_data(data); // dev
+	if (ft_check_setup_data(data))
+		return (free(data));
+	//ft_print_data(data); // dev
+	free(data); // dev
 }
 
 
@@ -57,4 +67,5 @@ void ft_print_data(t_data *data)
 	printf("eat : %li\n", data->time_to_eat);
 	printf("sleep : %li\n", data->time_to_sleep);
 	printf("must eat : %li\n", data->must_eat);
+	printf("end cond : %i\n", data->end_condition);
 }
