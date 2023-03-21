@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 17:31:45 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/21 12:53:04 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/21 12:55:52 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ int		ft_check_int_max(char *str);
 // ---------- setup.c ---------- //
 void	ft_setup(char **argv);
 t_data	*ft_setup_data(char **argv);
+int		ft_check_setup_data(t_data *data);
 
 // ---------- utils.c ---------- //
 long	ft_atoi_long(char *str);

@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 17:44:40 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/21 12:47:12 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/21 12:58:01 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	ft_setup(char **argv)
 	data = ft_setup_data(argv);
 	if (ft_check_setup_data(data))
 		return (free(data));
+	
 	//ft_print_data(data); // dev
 	free(data); // dev
 }
@@ -69,3 +70,9 @@ void ft_print_data(t_data *data)
 	printf("must eat : %li\n", data->must_eat);
 	printf("end cond : %i\n", data->end_condition);
 }
+
+// creer fonction double_free pour free data + philo si besoin de 2 free
+// {
+//		free(x);
+//		free(x);
+// }
