@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 17:44:40 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/28 08:49:08 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/28 10:35:10 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,18 @@ t_data	*ft_setup_data(char **argv)
 		data->must_eat = 0;
 		data->end_condition = 0;
 	}
+	data->time = ft_get_time();
 	return (data);
+}
+
+time_t	ft_get_time(void) // to move
+{
+	struct timeval	time;
+	time_t 			current;
+
+	gettimeofday(&time, NULL);
+	current = time.tv_sec * 1000 + time.tv_usec / 1000;
+	return (current);
 }
 
 int	ft_check_setup_data(t_data *data)
