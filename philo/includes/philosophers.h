@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 17:31:45 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/21 12:55:52 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/28 08:49:32 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,6 @@ long	ft_atoi_long(char *str);
 
 
 // DEV
-
 void ft_print_data(t_data *data);
+
 #endif

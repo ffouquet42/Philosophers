@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 17:44:40 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/21 12:58:01 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/28 08:49:08 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_data	*ft_setup_data(char **argv)
 	data->time_to_die = ft_atoi_long(argv[2]) * 1000;
 	data->time_to_eat = ft_atoi_long(argv[3]) * 1000;
 	data->time_to_sleep = ft_atoi_long(argv[4]) * 1000;
-	if (argv[5])
+	if (argv[5]) // si 0 on fait quoi ?
 	{
 		data->must_eat = ft_atoi_long(argv[5]);
 		data->end_condition = 1;
@@ -54,7 +54,7 @@ void	ft_setup(char **argv)
 	if (ft_check_setup_data(data))
 		return (free(data));
 	
-	//ft_print_data(data); // dev
+	ft_print_data(data); // dev
 	free(data); // dev
 }
 

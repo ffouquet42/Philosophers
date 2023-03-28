@@ -19,7 +19,7 @@ NAME		=	philo
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) -lpthread
 
 clean:
 	$(RM) $(OBJS)
