@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 17:31:45 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/29 14:18:58 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/29 14:29:28 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,8 @@ time_t	ft_get_time(void);
 // ---------- print.c ---------- //
 
 // ---------- one_philosopher.c ---------- //
-void	ft_one_philosopher(t_data *data, t_philosopher *philosopher);
+void	ft_one_philosopher(t_data *data);
+t_philosopher *ft_setup_one_philosopher(t_data *data);
 void	*ft_eat_alone(void *ptr);
 
 // DEV

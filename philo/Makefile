@@ -5,6 +5,8 @@ SRCS		=	srcs/philosophers.c								\
 				srcs/utils.c									\
 				srcs/print.c									\
 				srcs/one_philosopher.c							\
+				srcs/dev.c							\
+# DELETE DEV
 
 OBJS		=	$(SRCS:.c=.o)
 

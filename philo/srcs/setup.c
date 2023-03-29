@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 17:44:40 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/29 14:19:21 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/29 14:30:20 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,27 +49,11 @@ int	ft_check_setup_data(t_data *data)
 void	ft_setup(char **argv)
 {
 	t_data			*data;
-	t_philosopher	*philosopher;
 
 	data = ft_setup_data(argv);
-	philosopher = NULL;
 	if (ft_check_setup_data(data))
 		return (free(data));
 	if (data->nb_of_philosophers == 1)
-		ft_one_philosopher(data, philosopher);
-	// ft_print_data(data); // dev
-	ft_double_free(data, philosopher);
-}
-
-
-// dev
-
-void ft_print_data(t_data *data)
-{
-	printf("nb : %li\n", data->nb_of_philosophers);
-	printf("die : %li\n", data->time_to_die);
-	printf("eat : %li\n", data->time_to_eat);
-	printf("sleep : %li\n", data->time_to_sleep);
-	printf("must eat : %li\n", data->must_eat);
-	printf("end cond : %i\n", data->end_condition);
+		ft_one_philosopher(data);
+	free(data);
 }
