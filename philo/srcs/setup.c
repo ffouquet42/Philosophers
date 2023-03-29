@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 17:44:40 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/29 14:30:20 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/29 16:14:30 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,7 @@ void	ft_setup(char **argv)
 		return (free(data));
 	if (data->nb_of_philosophers == 1)
 		ft_one_philosopher(data);
+	else
+		ft_more_philosophers(data);
 	free(data);
 }

@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 17:31:45 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/29 14:29:28 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/29 16:50:53 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,27 +32,27 @@ typedef struct s_data
 	long			time_to_sleep;
 	long			must_eat;
 	int				end_condition;
-	int				is_dead;
+	int				is_alive;
 	time_t			time;
-	pthread_mutex_t	end;
-	pthread_mutex_t	msg;
-	pthread_mutex_t	death;
+	pthread_mutex_t	end;	// *
+	pthread_mutex_t	msg;	// *
+	pthread_mutex_t	death;	// *
 }	t_data;
 
 typedef struct s_philosopher
 {
 	int				id;
-	int				meals;
-	long			t_die;
-	long			t_eat;
-	long			t_sleep;
-	time_t			last_meal;
+	int				nb_of_meals;
+	long			time_to_die;
+	long			timt_to_eat;
+	long			time_to_sleep;
+	time_t			last_meal_time;
 	t_data 			*data;
 	pthread_t		thread;
-	pthread_mutex_t	*right_fork;
-	pthread_mutex_t	*left_fork;
-	pthread_mutex_t	eat;
-	pthread_mutex_t	meal;
+	pthread_mutex_t	*right_fork;	// *
+	pthread_mutex_t	*left_fork;		// *
+	pthread_mutex_t	eat;			// *
+	pthread_mutex_t	meal;			// *
 }	t_philosopher;
 
 
@@ -82,6 +82,15 @@ time_t	ft_get_time(void);
 void	ft_one_philosopher(t_data *data);
 t_philosopher *ft_setup_one_philosopher(t_data *data);
 void	*ft_eat_alone(void *ptr);
+
+// ---------- more_philosophers.c ---------- //
+void	ft_more_philosophers(t_data *data);
+
+// ---------- init_philosophers.c ---------- //
+t_philosopher *ft_init_philosophers(t_data *data);
+
+// ---------- mutex.c ---------- //
+
 
 // DEV
 void ft_print_data(t_data *data);
