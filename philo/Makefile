@@ -8,6 +8,7 @@ SRCS		=	srcs/philosophers.c								\
 				srcs/more_philosophers.c						\
 				srcs/init_philosophers.c						\
 				srcs/mutex.c									\
+				srcs/actions.c									\
 				srcs/dev.c							\
 # DELETE DEV
 

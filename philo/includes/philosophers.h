@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 17:31:45 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/29 16:50:53 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/29 17:22:28 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ typedef struct s_philosopher
 	int				id;
 	int				nb_of_meals;
 	long			time_to_die;
-	long			timt_to_eat;
+	long			time_to_eat;
 	long			time_to_sleep;
 	time_t			last_meal_time;
 	t_data 			*data;
@@ -88,9 +88,14 @@ void	ft_more_philosophers(t_data *data);
 
 // ---------- init_philosophers.c ---------- //
 t_philosopher *ft_init_philosophers(t_data *data);
+void	ft_run_thread(t_philosopher *philosophers);
 
 // ---------- mutex.c ---------- //
+void	ft_init_mutex(t_philosopher *philosophers);
+void	ft_link_forks(t_philosopher *philosophers);
 
+// ---------- actions.c ---------- //
+void	ft_wait(time_t time);
 
 // DEV
 void ft_print_data(t_data *data);
