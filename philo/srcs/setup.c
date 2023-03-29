@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 17:44:40 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/28 10:35:10 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/29 14:19:21 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,6 @@ t_data	*ft_setup_data(char **argv)
 	return (data);
 }
 
-time_t	ft_get_time(void) // to move
-{
-	struct timeval	time;
-	time_t 			current;
-
-	gettimeofday(&time, NULL);
-	current = time.tv_sec * 1000 + time.tv_usec / 1000;
-	return (current);
-}
-
 int	ft_check_setup_data(t_data *data)
 {
 	if (!data)
@@ -59,14 +49,16 @@ int	ft_check_setup_data(t_data *data)
 void	ft_setup(char **argv)
 {
 	t_data			*data;
-	// t_philosopher	*philosopher;
+	t_philosopher	*philosopher;
 
 	data = ft_setup_data(argv);
+	philosopher = NULL;
 	if (ft_check_setup_data(data))
 		return (free(data));
-	
-	ft_print_data(data); // dev
-	free(data); // dev
+	if (data->nb_of_philosophers == 1)
+		ft_one_philosopher(data, philosopher);
+	// ft_print_data(data); // dev
+	ft_double_free(data, philosopher);
 }
 
 
@@ -81,9 +73,3 @@ void ft_print_data(t_data *data)
 	printf("must eat : %li\n", data->must_eat);
 	printf("end cond : %i\n", data->end_condition);
 }
-
-// creer fonction double_free pour free data + philo si besoin de 2 free
-// {
-//		free(x);
-//		free(x);
-// }
