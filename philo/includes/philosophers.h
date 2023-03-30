@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 17:31:45 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/30 13:28:44 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/30 13:46:48 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,9 @@ void	*ft_eat_alone(void *ptr);
 
 // ---------- more_philosophers.c ---------- //
 void	ft_more_philosophers(t_data *data);
+void *ft_checker(t_philosopher *philosophers, int nb, int end_condition);
+int ft_check_death(t_philosopher *philosophers, int nb);
+int	ft_died(t_philosopher *philosopher, time_t last_meal);
 
 // ---------- init_philosophers.c ---------- //
 t_philosopher *ft_init_philosophers(t_data *data);
