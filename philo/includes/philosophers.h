@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 17:31:45 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/30 13:46:48 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/30 17:28:18 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ void	ft_init_mutex(t_philosopher *philosophers);
 void	ft_link_forks(t_philosopher *philosophers);
 
 // ---------- actions.c ---------- //
-void	ft_wait(time_t time);
+int	ft_wait(time_t time);
 int	ft_even_take_fork(t_philosopher *philosopher);
 int	ft_odd_take_fork(t_philosopher *philosopher);
 int	ft_eat(t_philosopher *philosopher);

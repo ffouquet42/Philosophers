@@ -6,13 +6,13 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:19:12 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/30 13:36:43 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/30 17:32:39 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philosophers.h"
 
-void	ft_wait(time_t to_wait)
+int	ft_wait(time_t to_wait)
 {
 	struct timeval	actual_time;
 	struct timeval	beginning;
@@ -73,16 +73,16 @@ int	ft_eat(t_philosopher *philosopher)
 	pthread_mutex_unlock(&philosopher->eat);
 	if (!ft_print_status(philosopher, "is eating"))
 	{
-		pthread_mutex_unlock(&philosopher->right_fork);
-		pthread_mutex_unlock(&philosopher->left_fork);
+		pthread_mutex_unlock(philosopher->right_fork);
+		pthread_mutex_unlock(philosopher->left_fork);
 		return (0);
 	}
 	ft_wait(philosopher->time_to_eat);
 	pthread_mutex_lock(&philosopher->meal);
 	philosopher->nb_of_meals += 1;
 	pthread_mutex_unlock(&philosopher->meal);
-	pthread_mutex_unlock(&philosopher->right_fork);
-	pthread_mutex_unlock(&philosopher->left_fork);
+	pthread_mutex_unlock(philosopher->right_fork);
+	pthread_mutex_unlock(philosopher->left_fork);
 	return (1);
 }
 

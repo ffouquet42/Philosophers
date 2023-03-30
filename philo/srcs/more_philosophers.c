@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 16:13:56 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/30 13:48:01 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/30 17:31:05 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,104 @@ int ft_check_death(t_philosopher *philosophers, int nb)
 	while (i < nb)
 	{
 		pthread_mutex_lock(&philosophers[i].eat);
-		if (!ft_died())
+		if (!ft_died(&philosophers[i], philosophers[i].last_meal_time))
+		{
+			pthread_mutex_unlock(&philosophers[i].eat);
+			pthread_mutex_lock(&philosophers->data->death);
+			philosophers->data->is_alive = 1;
+			pthread_mutex_unlock(&philosophers->data->death);
+			return (0);
+		}
+		pthread_mutex_unlock(&philosophers[i].eat);
 		i++;
 	}
 	return (1);
+}
+
+int	ft_check_end(t_philosopher *philosophers, int res, int nb)
+{
+	if (res == nb)
+	{
+		pthread_mutex_lock(&philosophers->data->end);
+		philosophers->data->must_eat = -1;
+		pthread_mutex_unlock(&philosophers->data->end);
+		return (0);
+	}
+	return (1);
+}
+
+int	ft_everyone_ate(t_philosopher *philosophers, int nb)
+{
+	int i;
+	int res;
+	int round;
+	int meals;
+
+	i = 0;
+	res = 0;
+	pthread_mutex_lock(&philosophers[i].meal);
+	round = philosophers[i].nb_of_meals;
+	pthread_mutex_unlock(&philosophers[i].meal);
+	meals = round;
+	while (i < nb)
+	{
+		if (round == philosophers->data->must_eat)
+		{
+			if (meals == round)
+				res++;
+			pthread_mutex_lock(&philosophers[i].meal);
+			meals = philosophers[i].nb_of_meals;
+			pthread_mutex_unlock(&philosophers[i].meal);
+			
+		}
+		i++;
+	}
+	return (ft_check_end(philosophers, res, nb));
 }
 
 void *ft_checker(t_philosopher *philosophers, int nb, int end_condition)
 {
 	while (1)
 	{
-		if ()
+		if (!ft_check_death(philosophers, nb));
+			return (NULL);
+		if (end_condition == 1)
+		{
+			if (!ft_everyone_ate(philosophers, nb));
+				return (NULL);
+		}
+		ft_wait(1000);
 	}
+	return (NULL);
+}
+
+void ft_waitforme(t_philosopher *philosophers, int nb)
+{
+	int i;
+
+	i = -1;
+	while (++i < nb)
+		pthread_join(philosophers[i].thread, NULL);
+}
+
+void ft_destroy(t_philosopher *philosophers, t_data *data)
+{
+	int i;
+
+	i = 0;
+	while (i < data->nb_of_philosophers)
+	{
+		pthread_mutex_destroy(philosophers[i].right_fork);
+		free(philosophers[i].right_fork);
+		pthread_mutex_destroy(&philosophers[i].eat);
+		pthread_mutex_destroy(&philosophers[i].meal);
+		i++;
+	}
+	free(philosophers);
+	pthread_mutex_destroy(&data->death);
+	pthread_mutex_destroy(&data->msg);
+	pthread_mutex_destroy(&data->end);
+	free(data);
 }
 
 void	ft_more_philosophers(t_data *data)
@@ -55,5 +141,7 @@ void	ft_more_philosophers(t_data *data)
 	if (!philosophers)
 		return ;
 	ft_checker(philosophers, data->nb_of_philosophers, data->end_condition);
+	ft_waitforme(philosophers, data->nb_of_philosophers);
+	ft_destroy(philosophers, data);
 	free(philosophers);
 }
