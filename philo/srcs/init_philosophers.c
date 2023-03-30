@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 16:19:31 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/29 17:30:34 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/30 13:27:08 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,18 @@ void	*ft_thread_philosopher(void *ptr)
 	{
 		if (philosopher->id % 2 == 0)
 		{
-			
+			if (!ft_even_take_fork(philosopher))
+				break ;
 		}
+		else
+		{
+			if (!ft_odd_take_fork(philosopher))
+				break ;
+		}
+		if (!ft_eat(philosopher))
+			break ;
+		if (!ft_sleep(philosopher))
+			break ;
 	}
 	pthread_exit(NULL);
 }
