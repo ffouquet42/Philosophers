@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 22:59:28 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/29 14:18:45 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/30 17:39:45 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,4 @@ time_t	ft_get_time(void)
 	gettimeofday(&time, NULL);
 	current = time.tv_sec * 1000 + time.tv_usec / 1000;
 	return (current);
-}
-
-void	ft_double_free(t_data *data, t_philosopher *philosopher)
-{
-	free(data);
-	free(philosopher);
 }

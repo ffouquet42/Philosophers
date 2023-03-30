@@ -6,13 +6,12 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 17:31:45 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/30 17:28:18 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/30 17:42:19 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHILOSOPHERS_H
 # define PHILOSOPHERS_H
-
 
 // ---------- INCLUDES ---------- //
 # include <stdio.h>
@@ -73,7 +72,6 @@ int		ft_check_setup_data(t_data *data);
 
 // ---------- utils.c ---------- //
 long	ft_atoi_long(char *str);
-void	ft_double_free(t_data *data, t_philosopher *philosopher);
 time_t	ft_get_time(void);
 
 // ---------- print.c ---------- //
@@ -86,13 +84,18 @@ void	*ft_eat_alone(void *ptr);
 
 // ---------- more_philosophers.c ---------- //
 void	ft_more_philosophers(t_data *data);
-void *ft_checker(t_philosopher *philosophers, int nb, int end_condition);
-int ft_check_death(t_philosopher *philosophers, int nb);
-int	ft_died(t_philosopher *philosopher, time_t last_meal);
+void	*ft_checker(t_philosopher *philosophers, int nb, int end_condition);
+int		ft_check_death(t_philosopher *philosophers, int nb);
+int		ft_died(t_philosopher *philosopher, time_t last_meal);
+void 	ft_destroy(t_philosopher *philosophers, t_data *data);
+void 	ft_waitforme(t_philosopher *philosophers, int nb);
+int		ft_everyone_ate(t_philosopher *philosophers, int nb);
+int		ft_check_end(t_philosopher *philosophers, int res, int nb);
 
 // ---------- init_philosophers.c ---------- //
 t_philosopher *ft_init_philosophers(t_data *data);
 void	ft_run_thread(t_philosopher *philosophers);
+void	*ft_thread_philosopher(void *ptr);
 
 // ---------- mutex.c ---------- //
 void	ft_init_mutex(t_philosopher *philosophers);
@@ -104,8 +107,5 @@ int	ft_even_take_fork(t_philosopher *philosopher);
 int	ft_odd_take_fork(t_philosopher *philosopher);
 int	ft_eat(t_philosopher *philosopher);
 int	ft_sleep(t_philosopher *philosopher);
-
-// DEV
-void ft_print_data(t_data *data);
 
 #endif
