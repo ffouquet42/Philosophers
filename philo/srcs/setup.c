@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 17:44:40 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/29 16:14:30 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/30 18:09:32 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	ft_check_setup_data(t_data *data)
 
 void	ft_setup(char **argv)
 {
-	t_data			*data;
+	t_data	*data;
 
 	data = ft_setup_data(argv);
 	if (ft_check_setup_data(data))

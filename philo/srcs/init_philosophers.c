@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 16:19:31 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/30 13:27:08 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/30 19:08:43 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,11 @@ t_philosopher *ft_init_philosophers(t_data *data)
 	{
 		philosophers[i].id = i;
 		philosophers[i].nb_of_meals = 0;
-		philosophers[i].data = data;
 		philosophers[i].time_to_die = data->time_to_die;
 		philosophers[i].time_to_eat = data->time_to_eat;
 		philosophers[i].time_to_sleep = data->time_to_sleep;
 		philosophers[i].last_meal_time = ft_get_time();
+		philosophers[i].data = data;
 		i++;
 	}
 	ft_init_mutex(philosophers);

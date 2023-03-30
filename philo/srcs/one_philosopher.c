@@ -6,13 +6,13 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 13:30:17 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/29 16:52:02 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/30 18:30:10 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philosophers.h"
 
-void	*ft_eat_alone(void *ptr) // good print ?
+void	*ft_eat_alone(void *ptr)
 {
 	t_philosopher *philosopher;
 
@@ -25,7 +25,7 @@ void	*ft_eat_alone(void *ptr) // good print ?
 	pthread_exit(NULL);
 }
 
-t_philosopher *ft_setup_one_philosopher(t_data *data) // need setup all values ?
+t_philosopher *ft_setup_one_philosopher(t_data *data)
 {
 	t_philosopher	*philosopher;
 	

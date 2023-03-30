@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 16:13:56 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/30 17:31:05 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/30 19:48:10 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int ft_check_death(t_philosopher *philosophers, int nb)
 		{
 			pthread_mutex_unlock(&philosophers[i].eat);
 			pthread_mutex_lock(&philosophers->data->death);
-			philosophers->data->is_alive = 1;
+			philosophers->data->is_alive = 1; // ?
 			pthread_mutex_unlock(&philosophers->data->death);
 			return (0);
 		}
@@ -88,6 +88,7 @@ int	ft_everyone_ate(t_philosopher *philosophers, int nb)
 	return (ft_check_end(philosophers, res, nb));
 }
 
+// regrouper les if return NULL
 void *ft_checker(t_philosopher *philosophers, int nb, int end_condition)
 {
 	while (1)
@@ -104,6 +105,7 @@ void *ft_checker(t_philosopher *philosophers, int nb, int end_condition)
 	return (NULL);
 }
 
+// supp la fonction et mettre dans more_philosophers
 void ft_waitforme(t_philosopher *philosophers, int nb)
 {
 	int i;
@@ -113,6 +115,7 @@ void ft_waitforme(t_philosopher *philosophers, int nb)
 		pthread_join(philosophers[i].thread, NULL);
 }
 
+// a bouger dans utils
 void ft_destroy(t_philosopher *philosophers, t_data *data)
 {
 	int i;
@@ -143,5 +146,5 @@ void	ft_more_philosophers(t_data *data)
 	ft_checker(philosophers, data->nb_of_philosophers, data->end_condition);
 	ft_waitforme(philosophers, data->nb_of_philosophers);
 	ft_destroy(philosophers, data);
-	free(philosophers);
+	free(philosophers); // pas utile
 }

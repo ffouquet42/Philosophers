@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:19:12 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/30 17:32:39 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/30 19:37:42 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ int	ft_sleep(t_philosopher *philosopher)
 	if (!ft_print_status(philosopher, "is thinking"))
 		return (0);
 	ft_wait((philosopher->time_to_eat - philosopher->time_to_sleep)
-		* ((philosopher->time_to_eat - philosopher->time_to_sleep) > 0));
+		* ((philosopher->time_to_eat - philosopher->time_to_sleep) > 0)); // >0?
 	ft_wait(1500);
 	return (1);
 }

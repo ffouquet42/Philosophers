@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 17:31:45 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/30 17:42:19 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/30 18:03:51 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ typedef struct s_philosopher
 	time_t			last_meal_time;
 	t_data 			*data;
 	pthread_t		thread;
-	pthread_mutex_t	*right_fork;	// *
-	pthread_mutex_t	*left_fork;		// *
+	pthread_mutex_t	*right_fork;
+	pthread_mutex_t	*left_fork;
 	pthread_mutex_t	eat;			// *
 	pthread_mutex_t	meal;			// *
 }	t_philosopher;
