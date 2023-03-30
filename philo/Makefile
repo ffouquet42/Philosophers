@@ -9,8 +9,6 @@ SRCS		=	srcs/philosophers.c								\
 				srcs/init_philosophers.c						\
 				srcs/mutex.c									\
 				srcs/actions.c									\
-				srcs/dev.c							\
-# DELETE DEV
 
 OBJS		=	$(SRCS:.c=.o)
 
