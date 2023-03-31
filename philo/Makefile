@@ -14,8 +14,7 @@ CC			=	gcc
 
 RM			=	rm -f
 
-# CFLAGS		=	-Wall -Wextra -Werror
-CFLAGS		=
+CFLAGS		=	-Wall -Wextra -Werror
 
 NAME		=	philo
 
