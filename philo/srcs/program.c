@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   manager.c                                          :+:      :+:    :+:   */
+/*   program.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 16:19:31 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/31 15:29:43 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/31 18:56:32 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philosophers.h"
 
-int	ft_state(time_t last_meal, t_philo *philo)
+int	ft_is_alive(time_t last_meal_time, t_philo *philo)
 {
 	time_t	now;
 
-	now = ft_get_time() - last_meal;
+	now = ft_get_time() - last_meal_time;
 	if (now >= philo->time_to_die / 1000)
 	{
 		ft_print_status(philo, "died");
@@ -25,15 +25,15 @@ int	ft_state(time_t last_meal, t_philo *philo)
 	return (1);
 }
 
-int	ft_runner(t_philo *philo, int count)
+int	ft_check_death(t_philo *philo, int nb)
 {
 	int i;
 
 	i = 0;
-	while (i < count)
+	while (i < nb)
 	{
 		pthread_mutex_lock(&philo[i].eating);
-		if (ft_state(philo[i].last_meal_time, &philo[i]) == 0)
+		if (ft_is_alive(philo[i].last_meal_time, &philo[i]) == 0)
 		{
 			pthread_mutex_unlock(&philo[i].eating);
 			pthread_mutex_lock(&philo->data->death);
@@ -47,9 +47,9 @@ int	ft_runner(t_philo *philo, int count)
 	return (1);
 }
 
-int	ft_check_end(t_philo *philo, int res, int count)
+int	ft_need_more_eat(t_philo *philo, int res, int nb)
 {
-	if (res == count)
+	if (res == nb)
 	{
 		pthread_mutex_lock(&philo->data->end);
 		philo->data->must_eat = -1;
@@ -59,7 +59,7 @@ int	ft_check_end(t_philo *philo, int res, int count)
 	return (1);
 }
 
-int	ft_everyone_ate(t_philo *philo, int count)
+int	ft_all_ate(t_philo *philo, int nb) // #
 {
 	int	i;
 	int	res;
@@ -72,7 +72,7 @@ int	ft_everyone_ate(t_philo *philo, int count)
 	round = philo[i].nb_of_meals;
 	pthread_mutex_unlock(&philo[i].meal);
 	meals = round;
-	while (i < count)
+	while (i < nb)
 	{
 		if (round == philo->data->must_eat)
 		{
@@ -84,18 +84,18 @@ int	ft_everyone_ate(t_philo *philo, int count)
 		}
 		i++;
 	}
-	return (ft_check_end(philo, res, count));
+	return (ft_need_more_eat(philo, res, nb));
 }
 
-void	*ft_manager(t_philo *philo, int count, int mode)
+void	*ft_program(t_philo *philo, int nb, int end_cond)
 {
 	while (1)
 	{
-		if (ft_runner(philo, count) == 0)
+		if (ft_check_death(philo, nb) == 0)
 			return (NULL);
-		if (mode == 1)
+		if (end_cond == 1)
 		{
-			if (ft_everyone_ate(philo, count) == 0)
+			if (ft_all_ate(philo, nb) == 0)
 				return (NULL);
 		}
 		ft_wait(1000);

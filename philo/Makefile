@@ -3,11 +3,9 @@ SRCS		=	srcs/philosophers.c								\
 				srcs/verification.c								\
 				srcs/setup.c									\
 				srcs/utils.c									\
-				srcs/print.c									\
 				srcs/one_philosopher.c							\
 				srcs/more_philosophers.c						\
-				srcs/manager.c									\
-				srcs/mutex.c									\
+				srcs/program.c									\
 				srcs/actions.c									\
 
 OBJS		=	$(SRCS:.c=.o)

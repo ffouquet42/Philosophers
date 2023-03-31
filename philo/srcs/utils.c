@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 22:59:28 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/31 15:33:03 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/31 18:53:06 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,19 +37,19 @@ time_t	ft_get_time(void) // !
 	return (current);
 }
 
-void	ft_clean_exit(char *str, void *ptr) // !
+void	ft_exit_no_philo(char *str, void *ptr) // !
 {
 	printf("%s", str);
 	free(ptr);
 	exit(EXIT_FAILURE);
 }
 
-void	ft_waitforme(t_philo *philo, int count)
+void	ft_loop_threads(t_philo *philo, int nb)
 {
 	int	i;
 
 	i = -1;
-	while (++i < count)
+	while (++i < nb)
 		pthread_join(philo[i].thread, NULL);
 }
 

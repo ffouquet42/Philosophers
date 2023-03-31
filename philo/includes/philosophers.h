@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 17:31:45 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/31 15:33:22 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/31 18:56:26 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,26 +57,24 @@ typedef struct s_philo
 // ---------- PROTOTYPES ---------- //
 
 // ---------- philosophers.c ---------- //
-int	main(int argc, char **argv);
+int		main(int argc, char **argv);
 
 // ---------- verification.c ---------- //
-int	ft_check_argv(char **argv);
-int	ft_check_only_digit(char *str);
-int	ft_check_int_max(char *str);
+int		ft_check_argv(char **argv);
+int		ft_check_only_digit(char *str);
+int		ft_check_int_max(char *str);
 
 // ---------- setup.c ---------- //
 void	ft_setup(char **argv);
 t_data	*ft_setup_data(char **argv);
+int		ft_print_status(t_philo *philo, char *str);
 
 // ---------- utils.c ---------- //
 long	ft_atoi_long(char *str);
 time_t	ft_get_time(void);
-void	ft_clean_exit(char *str, void *ptr);
-void	ft_waitforme(t_philo *philo, int count);
+void	ft_exit_no_philo(char *str, void *ptr);
+void	ft_loop_threads(t_philo *philo, int nb);
 void	ft_destroy(t_philo *philo, t_data *data);
-
-// ---------- print.c ---------- //
-int	ft_print_status(t_philo *philo, char *str);
 
 // ---------- one_philosopher.c ---------- //
 void	ft_one_philosopher(t_data *data, t_philo *philo);
@@ -84,25 +82,23 @@ void	*ft_eat_alone(void *ptr);
 
 // ---------- more_philosophers.c ---------- //
 t_philo	*ft_init_philo(t_data *data);
-void	ft_init_thread(t_philo *philo, int count);
+void	ft_init_thread(t_philo *philo, int nb);
 void	*ft_eat_together(void *ptr);
+void	ft_mutex_fork(t_philo *philo, int nb);
+void	ft_link_forks(t_philo *philo, int nb);
 
-// ---------- manager.c ---------- //
-void	*ft_manager(t_philo *philo, int count, int mode);
-int	ft_runner(t_philo *philo, int count);
-int	ft_state(time_t last_meal, t_philo *philo);
-int	ft_everyone_ate(t_philo *philo, int count);
-int	ft_check_end(t_philo *philo, int res, int count);
-
-// ---------- mutex.c ---------- //
-void	ft_init_mutex(t_philo *philo, int count);
-void	ft_connect_mutex(t_philo *philo, int count);
+// ---------- program.c ---------- //
+void	*ft_program(t_philo *philo, int nb, int end_cond);
+int		ft_check_death(t_philo *philo, int nb);
+int		ft_is_alive(time_t last_meal_time, t_philo *philo);
+int		ft_all_ate(t_philo *philo, int nb);
+int		ft_need_more_eat(t_philo *philo, int res, int nb); // #
 
 // ---------- actions.c ---------- //
-int	ft_wait(time_t rest);
-int	ft_even_fork(t_philo *philo);
-int	ft_odd_fork(t_philo *philo);
-int	ft_eating(t_philo *philo);
-int	ft_sleeping(t_philo *philo);
+int		ft_wait(time_t rest);
+int		ft_even_take_fork(t_philo *philo);
+int		ft_odd_take_fork(t_philo *philo);
+int		ft_eat(t_philo *philo);
+int		ft_sleep(t_philo *philo);
 
 #endif

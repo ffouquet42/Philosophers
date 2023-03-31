@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:19:12 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/31 15:18:54 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/31 18:58:37 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_wait(time_t rest)
 	return (1);
 }
 
-int	ft_even_fork(t_philo *philo)
+int	ft_even_take_fork(t_philo *philo)
 {
 	pthread_mutex_lock(philo->left_fork);
 	if (ft_print_status(philo, "has taken a fork") == 0)
@@ -49,7 +49,7 @@ int	ft_even_fork(t_philo *philo)
 	return (1);
 }
 
-int	ft_odd_fork(t_philo *philo)
+int	ft_odd_take_fork(t_philo *philo)
 {
 	pthread_mutex_lock(philo->right_fork);
 	if (ft_print_status(philo, "has taken a fork") == 0)
@@ -67,7 +67,7 @@ int	ft_odd_fork(t_philo *philo)
 	return (1);
 }
 
-int	ft_eating(t_philo *philo)
+int	ft_eat(t_philo *philo)
 {
 	pthread_mutex_lock(&philo->eating);
 	philo->last_meal_time = ft_get_time();
@@ -87,7 +87,7 @@ int	ft_eating(t_philo *philo)
 	return (1);
 }
 
-int	ft_sleeping(t_philo *philo)
+int	ft_sleep(t_philo *philo)
 {
 	if (ft_print_status(philo, "is sleeping") == 0)
 		return (0);
