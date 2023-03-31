@@ -6,7 +6,7 @@ SRCS		=	srcs/philosophers.c								\
 				srcs/print.c									\
 				srcs/one_philosopher.c							\
 				srcs/more_philosophers.c						\
-				srcs/init_philosophers.c						\
+				srcs/manager.c									\
 				srcs/mutex.c									\
 				srcs/actions.c									\
 
