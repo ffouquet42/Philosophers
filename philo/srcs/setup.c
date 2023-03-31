@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 17:44:40 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/30 18:09:32 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/31 12:07:55 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,11 @@ t_data	*ft_setup_data(char **argv)
 		data->must_eat = 0;
 		data->end_condition = 0;
 	}
+	data->is_alive = 1;
 	data->time = ft_get_time();
+	pthread_mutex_init(&data->end, NULL);
+	pthread_mutex_init(&data->msg, NULL);
+	pthread_mutex_init(&data->death, NULL);
 	return (data);
 }
 

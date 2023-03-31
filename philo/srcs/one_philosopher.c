@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 13:30:17 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/30 18:30:10 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/31 11:55:53 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,7 @@ void	ft_one_philosopher(t_data *data)
 	pthread_create(&philosopher->thread, NULL, &ft_eat_alone, philosopher);
 	pthread_join(philosopher->thread, NULL);
 	free(philosopher);
+	pthread_mutex_destroy(&data->death);
+	pthread_mutex_destroy(&data->msg);
+	free(data);
 }

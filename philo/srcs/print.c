@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 22:59:24 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/30 19:29:27 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/03/31 12:09:26 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_print_status(t_philosopher *philosopher, char *str)
 {
 	pthread_mutex_lock(&philosopher->data->death);
-	if (philosopher->data->is_alive == 1)
+	if (!philosopher->data->is_alive)
 	{
 		pthread_mutex_unlock(&philosopher->data->death);
 		return (0);
