@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 16:19:31 by fllanet           #+#    #+#             */
-/*   Updated: 2023/04/01 10:37:23 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/04/01 13:19:40 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ int	ft_check_death(t_philo *philo, int nb)
 	return (1);
 }
 
-int	ft_need_more_eat(t_philo *philo, int res, int nb)
+int	ft_need_more_eat(t_philo *philo, int eat_all, int nb)
 {
-	if (res == nb)
+	if (eat_all == nb)
 	{
 		pthread_mutex_lock(&philo->data->end);
 		philo->data->must_eat = -1;
@@ -59,15 +59,15 @@ int	ft_need_more_eat(t_philo *philo, int res, int nb)
 	return (1);
 }
 
-int	ft_all_ate(t_philo *philo, int nb) // #
+int	ft_all_ate(t_philo *philo, int nb)
 {
 	int	i;
-	int	res;
+	int	eat_all;
 	int	round;
 	int	meals;
 
 	i = 0;
-	res = 0;
+	eat_all = 0;
 	pthread_mutex_lock(&philo[i].meal);
 	round = philo[i].nb_of_meals;
 	pthread_mutex_unlock(&philo[i].meal);
@@ -77,14 +77,14 @@ int	ft_all_ate(t_philo *philo, int nb) // #
 		if (round == philo->data->must_eat)
 		{
 			if (meals == round)
-				res++;
+				eat_all++;
 			pthread_mutex_lock(&philo[i].meal);
 			meals = philo[i].nb_of_meals;
 			pthread_mutex_unlock(&philo[i].meal);
 		}
 		i++;
 	}
-	return (ft_need_more_eat(philo, res, nb));
+	return (ft_need_more_eat(philo, eat_all, nb));
 }
 
 void	*ft_program(t_philo *philo, int nb, int end_cond)
