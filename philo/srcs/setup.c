@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 17:44:40 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/31 18:48:22 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/04/01 11:03:51 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_print_status(t_philo *philo, char *str)
 	}
 	pthread_mutex_unlock(&philo->data->end);
 	pthread_mutex_lock(&philo->data->message);
-	printf("%ld %d %s\n", ft_get_time() - philo->data->time, philo->id + 1, str);
+	printf("%ld %d %s\n", ft_get_time() - philo->data->time, philo->id + 1, str); // #
 	pthread_mutex_unlock(&philo->data->message);
 	return (1);
 }
@@ -43,7 +43,7 @@ t_data	*ft_setup_data(char **argv)
 		return (NULL);
 	data->nb_of_philosophers = ft_atoi_long(argv[1]);
 	if (data->nb_of_philosophers < 1)
-		ft_exit_no_philo("No one's arround the table\n", data); // #
+		ft_exit_no_philo("No one philosopher detected\n", data);
 	data->time = (time_t)ft_get_time();
 	data->time_to_die = ft_atoi_long(argv[2]) * 1000;
 	data->time_to_eat = ft_atoi_long(argv[3]) * 1000;
