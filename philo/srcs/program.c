@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 16:19:31 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/31 18:56:32 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/04/01 10:37:23 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	ft_is_alive(time_t last_meal_time, t_philo *philo)
 {
-	time_t	now;
+	time_t	death_time;
 
-	now = ft_get_time() - last_meal_time;
-	if (now >= philo->time_to_die / 1000)
+	death_time = ft_get_time() - last_meal_time;
+	if (death_time >= philo->time_to_die / 1000)
 	{
 		ft_print_status(philo, "died");
 		return (0);
