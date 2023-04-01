@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 16:19:31 by fllanet           #+#    #+#             */
-/*   Updated: 2023/04/01 13:43:38 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/04/01 13:50:54 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_is_alive(time_t last_meal_time, t_philo *philo)
 
 int	ft_check_death(t_philo *philo, int nb)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < nb)

@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 16:13:56 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/31 18:54:14 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/04/01 13:53:50 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_eat_together(void *ptr)
 {
-	t_philo *philo;
+	t_philo	*philo;
 
 	philo = ptr;
 	if (philo->id % 2 == 0)
@@ -29,7 +29,7 @@ void	*ft_eat_together(void *ptr)
 		else
 		{
 			if (ft_odd_take_fork(philo) == 0)
-				break ;	
+				break ;
 		}
 		if (ft_eat(philo) == 0)
 			break ;
@@ -41,7 +41,7 @@ void	*ft_eat_together(void *ptr)
 
 void	ft_mutex_fork(t_philo *philo, int nb)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < nb)
@@ -58,7 +58,7 @@ void	ft_mutex_fork(t_philo *philo, int nb)
 
 void	ft_link_forks(t_philo *philo, int nb)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < nb)
@@ -75,7 +75,7 @@ void	ft_link_forks(t_philo *philo, int nb)
 
 void	ft_init_thread(t_philo *philo, int nb)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < nb)
@@ -87,9 +87,9 @@ void	ft_init_thread(t_philo *philo, int nb)
 
 t_philo	*ft_init_philo(t_data *data)
 {
-	int i;
-	int count;
-	t_philo *philo;
+	int		i;
+	int		count;
+	t_philo	*philo;
 
 	i = 0;
 	count = data->nb_of_philosophers;

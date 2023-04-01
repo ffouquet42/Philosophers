@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 13:30:17 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/31 14:53:48 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/04/01 13:50:09 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_eat_alone(void *ptr)
 {
-	t_philo *philo;
+	t_philo	*philo;
 
 	philo = ptr;
 	printf("%ld %d has taken a fork\n", ft_get_time()

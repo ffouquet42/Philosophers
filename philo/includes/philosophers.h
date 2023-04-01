@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 17:31:45 by fllanet           #+#    #+#             */
-/*   Updated: 2023/04/01 13:11:12 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/04/01 13:49:27 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void	*ft_program(t_philo *philo, int nb, int end_cond);
 int		ft_check_death(t_philo *philo, int nb);
 int		ft_is_alive(time_t last_meal_time, t_philo *philo);
 int		ft_all_ate(t_philo *philo, int nb);
-int		ft_need_more_eat(t_philo *philo, int res, int nb);  // #
+int		ft_need_more_eat(t_philo *philo, int res, int nb);
 
 // ---------- actions.c ---------- //
 int		ft_wait(time_t rest);

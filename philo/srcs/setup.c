@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 17:44:40 by fllanet           #+#    #+#             */
-/*   Updated: 2023/04/01 12:59:24 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/04/01 13:51:08 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ t_data	*ft_setup_data(char **argv)
 void	ft_setup(char **argv)
 {
 	t_data	*data;
-	t_philo *philo;
+	t_philo	*philo;
 
 	philo = NULL;
 	data = ft_setup_data(argv);

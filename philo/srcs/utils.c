@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 22:59:28 by fllanet           #+#    #+#             */
-/*   Updated: 2023/04/01 13:08:41 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/04/01 13:50:32 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ long	ft_atoi_long(char *str)
 {
 	int		i;
 	long	res;
-	
+
 	i = 0;
 	res = 0;
 	while (str[i])
@@ -30,7 +30,7 @@ long	ft_atoi_long(char *str)
 time_t	ft_get_time(void)
 {
 	struct timeval	time;
-	time_t 			current;
+	time_t			current;
 
 	gettimeofday(&time, NULL);
 	current = time.tv_sec * 1000 + time.tv_usec / 1000;
