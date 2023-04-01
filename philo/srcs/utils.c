@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 22:59:28 by fllanet           #+#    #+#             */
-/*   Updated: 2023/03/31 18:53:06 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/04/01 13:08:41 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ long	ft_atoi_long(char *str)
 	return (res);
 }
 
-time_t	ft_get_time(void) // !
+time_t	ft_get_time(void)
 {
 	struct timeval	time;
 	time_t 			current;
@@ -37,7 +37,7 @@ time_t	ft_get_time(void) // !
 	return (current);
 }
 
-void	ft_exit_no_philo(char *str, void *ptr) // !
+void	ft_exit_no_philo(char *str, void *ptr)
 {
 	printf("%s", str);
 	free(ptr);

@@ -6,13 +6,13 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:19:12 by fllanet           #+#    #+#             */
-/*   Updated: 2023/04/01 11:05:14 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/04/01 13:07:13 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philosophers.h"
 
-int	ft_wait(time_t rest) // #
+int	ft_wait(time_t rest)
 {
 	struct timeval	tv;
 	struct timeval	start;
@@ -95,7 +95,7 @@ int	ft_sleep(t_philo *philo)
 	if (ft_print_status(philo, "is thinking") == 0)
 		return (0);
 	ft_wait((philo->time_to_eat - philo->time_to_sleep)
-		* ((philo->time_to_eat - philo->time_to_sleep) > 0)); // #
+		* ((philo->time_to_eat - philo->time_to_sleep) > 0));
 	ft_wait(1500);
 	return (1);
 }

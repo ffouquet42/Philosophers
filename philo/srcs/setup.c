@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 17:44:40 by fllanet           #+#    #+#             */
-/*   Updated: 2023/04/01 11:03:51 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/04/01 12:59:24 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_print_status(t_philo *philo, char *str)
 	}
 	pthread_mutex_unlock(&philo->data->end);
 	pthread_mutex_lock(&philo->data->message);
-	printf("%ld %d %s\n", ft_get_time() - philo->data->time, philo->id + 1, str); // #
+	printf("%ld %d %s\n", ft_get_time() - philo->data->time, philo->id + 1, str);
 	pthread_mutex_unlock(&philo->data->message);
 	return (1);
 }
