@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 16:19:31 by fllanet           #+#    #+#             */
-/*   Updated: 2023/04/01 13:19:40 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/04/01 13:43:38 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,20 +63,20 @@ int	ft_all_ate(t_philo *philo, int nb)
 {
 	int	i;
 	int	eat_all;
-	int	round;
+	int	eated;
 	int	meals;
 
 	i = 0;
 	eat_all = 0;
 	pthread_mutex_lock(&philo[i].meal);
-	round = philo[i].nb_of_meals;
+	eated = philo[i].nb_of_meals;
 	pthread_mutex_unlock(&philo[i].meal);
-	meals = round;
+	meals = eated;
 	while (i < nb)
 	{
-		if (round == philo->data->must_eat)
+		if (eated == philo->data->must_eat)
 		{
-			if (meals == round)
+			if (meals == eated)
 				eat_all++;
 			pthread_mutex_lock(&philo[i].meal);
 			meals = philo[i].nb_of_meals;
