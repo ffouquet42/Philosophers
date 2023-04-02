@@ -1,4 +1,3 @@
-
 SRCS		=	srcs/philosophers.c								\
 				srcs/verification.c								\
 				srcs/setup.c									\
