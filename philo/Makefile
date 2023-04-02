@@ -10,11 +10,11 @@ SRCS		=	srcs/philosophers.c								\
 
 OBJS		=	$(SRCS:.c=.o)
 
-CC			=	gcc
+CC			=	cc
 
 RM			=	rm -f
 
-CFLAGS		=	-Wall -Wextra -Werror
+CFLAGS		=	-Wall -Wextra -Werror #-fsanitize=thread
 
 NAME		=	philo
 
