@@ -1,4 +1,5 @@
 SRCS		=	srcs/philosophers.c								\
+				srcs/parsing/argv.c								\
 
 OBJS		=	$(SRCS:.c=.o)
 
@@ -6,8 +7,7 @@ CC			=	cc
 
 RM			=	rm -f
 
-#CFLAGS		=	-Wall -Wextra -Werror -fsanitize=thread
-CFLAGS		=	
+CFLAGS		=	-Wall -Wextra -Werror #-fsanitize=thread
 
 NAME		=	philo
 
