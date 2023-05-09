@@ -6,13 +6,13 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 12:39:24 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/09 12:39:58 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/09 13:14:49 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/philosophers.h"
 
-int	ft_atoi_long(char *str)
+int	ft_atoi(char *str)
 {
 	int	i;
 	int	res;

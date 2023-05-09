@@ -3,7 +3,9 @@ SRCS		=	srcs/philosophers.c								\
 				srcs/initialization/data.c						\
 				srcs/program/setup.c							\
 				srcs/utils/free.c								\
+				srcs/utils/time.c								\
 				srcs/utils/libft/ft_calloc.c					\
+				srcs/utils/libft/ft_atoi.c						\
 
 OBJS		=	$(SRCS:.c=.o)
 

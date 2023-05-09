@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 08:57:57 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/09 12:41:03 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/09 13:36:25 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int		main(int argc, char **argv);
 //----------------- argv.c ----------------//
 int		parsing_argv(char **argv);
 int		check_only_digit(char *str);
-int		check_int_max(char *str);
+int		check_int_max_and_zero(char *str);
 
 
 //**********************************************//
@@ -102,6 +102,9 @@ int		setup(char **argv);
 
 //----------------- free.c ----------------//
 
+//----------------- time.c ----------------//
+long	ft_get_time(void);
+
 
 //**********************************************//
 //					LIBFT						//
@@ -112,7 +115,11 @@ void	*ft_calloc(size_t nmemb, size_t size);
 void	ft_bzero(void *s, size_t n);
 
 //----------------- ft_atoi.c ----------------//
-int		ft_atoi_long(char *str);
+int		ft_atoi(char *str);
 
+
+
+// dev
+void	print_data(t_data *data);
 
 #endif
