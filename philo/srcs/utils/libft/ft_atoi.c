@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philosophers.c                                     :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/09 08:59:24 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/09 12:02:24 by fllanet          ###   ########.fr       */
+/*   Created: 2023/05/09 12:39:24 by fllanet           #+#    #+#             */
+/*   Updated: 2023/05/09 12:39:58 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/philosophers.h"
+#include "../../../includes/philosophers.h"
 
-int	main(int argc, char **argv)
+int	ft_atoi_long(char *str)
 {
-	if (argc != 5 && argc != 6)
-		return (printf("Incorrect number of arguments\n"), 1);
-	if (parsing_argv(argv))
-			return (1);
-	if (setup(argv))
-		return (1);
-	return (0);
+	int	i;
+	int	res;
+
+	i = 0;
+	res = 0;
+	while (str[i])
+	{
+		res = res * 10 + (str[i] - 48);
+		i++;
+	}
+	return (res);
 }

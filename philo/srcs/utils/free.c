@@ -1,24 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philosophers.c                                     :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/09 08:59:24 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/09 12:02:24 by fllanet          ###   ########.fr       */
+/*   Created: 2023/05/09 12:26:26 by fllanet           #+#    #+#             */
+/*   Updated: 2023/05/09 12:34:25 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/philosophers.h"
+#include "../../includes/philosophers.h"
 
-int	main(int argc, char **argv)
-{
-	if (argc != 5 && argc != 6)
-		return (printf("Incorrect number of arguments\n"), 1);
-	if (parsing_argv(argv))
-			return (1);
-	if (setup(argv))
-		return (1);
-	return (0);
-}
