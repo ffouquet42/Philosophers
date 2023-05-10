@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 12:26:26 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/10 12:30:45 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/10 14:24:27 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,10 @@ void	free_data(t_data *data)
 	pthread_mutex_destroy(&data->check_last_eat);
 	pthread_mutex_destroy(&data->check_death);
 	free(data);
+}
+
+void	free_structs(t_data *data, t_philo *philo)
+{
+	free_data(data);
+	free(philo);
 }

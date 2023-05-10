@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 08:57:57 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/10 13:47:52 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/10 14:25:19 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ t_philo	*init_philo(t_data *data);
 
 //----------------- setup.c ----------------//
 int		setup(char **argv);
+int		threads_manager(t_data *data, t_philo *philo);
 
 
 //**********************************************//
@@ -108,6 +109,7 @@ int		setup(char **argv);
 
 //----------------- free.c ----------------//
 void	free_data(t_data *data);
+void	free_structs(t_data *data, t_philo *philo);
 
 //----------------- time.c ----------------//
 long	get_time(void);
