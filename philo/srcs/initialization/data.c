@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 12:09:19 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/09 13:47:43 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/10 11:48:42 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_data	*init_data(char **argv)
 	data->time_to_die = ft_atoi(argv[2]);
 	data->time_to_eat = ft_atoi(argv[3]);
 	data->time_to_sleep = ft_atoi(argv[4]);
-	data->time = ft_get_time();
+	data->time = get_time();
 	data->is_dead = 0;
 	data->must_eat = -1; // 0
 	if (argv[5])

@@ -6,14 +6,14 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 12:50:04 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/09 13:08:40 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/10 11:48:47 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/philosophers.h"
 
 
-long	ft_get_time(void)
+long	get_time(void)
 {
 	struct timeval	time;
 	long			current;
