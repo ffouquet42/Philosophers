@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 08:57:57 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/10 11:48:54 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/10 12:31:00 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ typedef struct s_data
 	pthread_mutex_t	write;
 	pthread_mutex_t	check_must_eat;
 	pthread_mutex_t	check_last_eat;
-	pthread_mutex_t	check_die;
+	pthread_mutex_t	check_death;
 }	t_data;
 
 typedef struct s_philo
@@ -87,6 +87,9 @@ int		check_int_max_and_zero(char *str);
 //----------------- data.c ----------------//
 t_data	*init_data(char **argv);
 
+//----------------- mutex.c ----------------//
+int		init_mutex(t_data *data);
+
 
 //**********************************************//
 //					PROGRAM						//
@@ -101,6 +104,7 @@ int		setup(char **argv);
 //**********************************************//
 
 //----------------- free.c ----------------//
+void	free_data(t_data *data);
 
 //----------------- time.c ----------------//
 long	get_time(void);

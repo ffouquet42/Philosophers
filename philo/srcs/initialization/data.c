@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 12:09:19 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/10 11:48:42 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/10 12:31:37 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,10 @@ t_data	*init_data(char **argv)
 	data->must_eat = -1; // 0
 	if (argv[5])
 		data->must_eat = ft_atoi(argv[5]);
+	data->fork = ft_calloc(sizeof(pthread_mutex_t), data->nb_of_philo);
+	if (!data->fork)
+		return (printf("Mutex malloc failed\n"), free(data), NULL);
+	if (init_mutex(data))
+		return (printf("Mutex init failed\n"), free_data(data), NULL);
 	return (data);
 }

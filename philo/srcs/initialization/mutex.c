@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   setup.c                                            :+:      :+:    :+:   */
+/*   mutex.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/09 11:58:28 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/10 12:32:08 by fllanet          ###   ########.fr       */
+/*   Created: 2023/05/10 12:11:17 by fllanet           #+#    #+#             */
+/*   Updated: 2023/05/10 12:17:27 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/philosophers.h"
 
-int	setup(char **argv)
+int	init_mutex(t_data *data)
 {
-	t_data	*data;
-	t_philo	*philo;
-	
-	data = init_data(argv);
-	if (!data)
+	int	i;
+
+	i = 0;
+	while (i < data->nb_of_philo)
+	{
+		if (pthread_mutex_init(&data->fork[i], NULL))
+			return (1);
+		i++;
+	}
+	if (pthread_mutex_init(&data->write, NULL) ||
+		pthread_mutex_init(&data->check_must_eat, NULL) ||
+		pthread_mutex_init(&data->check_last_eat, NULL) ||
+		pthread_mutex_init(&data->check_death, NULL))
 		return (1);
-	return (free_data(data), 0);
+	return (0);
 }

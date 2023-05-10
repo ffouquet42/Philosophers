@@ -1,6 +1,7 @@
 SRCS		=	srcs/philosophers.c								\
 				srcs/parsing/argv.c								\
 				srcs/initialization/data.c						\
+				srcs/initialization/mutex.c						\
 				srcs/program/setup.c							\
 				srcs/utils/free.c								\
 				srcs/utils/time.c								\
