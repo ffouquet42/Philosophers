@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 08:57:57 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/11 13:35:47 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/11 14:49:10 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@
 # include <pthread.h>
 # include <sys/time.h>
 # include <unistd.h>
+//
+# include <string.h>
+# include <stddef.h>
 
 
 //**********************************************//
@@ -107,6 +110,10 @@ void	*loop(void *ptr);
 //----------------- one_philo.c ----------------//
 void	one_philo(t_philo *philo);
 
+//----------------- death.c ----------------//
+
+//----------------- eat.c ----------------//
+
 
 //**********************************************//
 //					UTILS						//
@@ -118,6 +125,7 @@ void	free_structs(t_data *data, t_philo *philo);
 
 //----------------- time.c ----------------//
 long	get_time(void);
+void	wait(t_philo *philo, long long time_to_sleep);
 
 //----------------- display.c ----------------//
 void	display(t_philo *philo, int action);

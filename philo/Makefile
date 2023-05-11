@@ -5,6 +5,8 @@ SRCS		=	srcs/philosophers.c								\
 				srcs/initialization/philo.c						\
 				srcs/program/setup.c							\
 				srcs/program/one_philo.c						\
+				srcs/program/death.c							\
+				srcs/program/eat.c								\
 				srcs/utils/free.c								\
 				srcs/utils/time.c								\
 				srcs/utils/display.c							\
