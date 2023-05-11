@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 12:09:19 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/10 12:31:37 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/11 15:03:14 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_data	*init_data(char **argv)
 	data->time_to_sleep = ft_atoi(argv[4]);
 	data->time = get_time();
 	data->is_dead = 0;
-	data->must_eat = -1; // 0
+	data->must_eat = 0;
 	if (argv[5])
 		data->must_eat = ft_atoi(argv[5]);
 	data->fork = ft_calloc(sizeof(pthread_mutex_t), data->nb_of_philo);

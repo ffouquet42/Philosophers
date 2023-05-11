@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 11:58:28 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/11 14:38:18 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/11 14:52:14 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*loop(void *ptr)
 	{
 		
 	}
-	else if (philo->data_struct->nb_of_philo % 2 == 0)
+	else if (philo->data_struct->nb_of_philo % 2 == 0) // +
 		printf("loop usleep\n");
 	// while ()
 	//     actions
