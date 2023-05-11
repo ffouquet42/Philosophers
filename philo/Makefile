@@ -4,8 +4,10 @@ SRCS		=	srcs/philosophers.c								\
 				srcs/initialization/mutex.c						\
 				srcs/initialization/philo.c						\
 				srcs/program/setup.c							\
+				srcs/program/one_philo.c						\
 				srcs/utils/free.c								\
 				srcs/utils/time.c								\
+				srcs/utils/display.c							\
 				srcs/utils/libft/ft_calloc.c					\
 				srcs/utils/libft/ft_atoi.c						\
 
