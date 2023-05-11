@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 11:58:28 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/11 15:20:23 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/11 22:47:49 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	*loop(void *ptr)
 int	threads_manager(t_data *data, t_philo *philo)
 {
 	int	i;
+	
 	i = 0;
 	while (i < data->nb_of_philo)
 	{
