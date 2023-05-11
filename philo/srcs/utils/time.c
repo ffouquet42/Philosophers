@@ -6,12 +6,11 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 12:50:04 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/11 14:42:02 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/11 15:12:33 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/philosophers.h"
-
 
 long	get_time(void)
 {

@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 08:57:57 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/11 15:01:14 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/11 15:20:08 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,7 @@ void	*loop(void *ptr);
 void	one_philo(t_philo *philo);
 
 //----------------- death.c ----------------//
+void	death_verification_loop(t_philo *philo);
 int		check_death(t_philo *philo);
 
 //----------------- eat.c ----------------//
