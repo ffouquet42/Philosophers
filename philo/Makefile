@@ -7,6 +7,7 @@ SRCS		=	srcs/philosophers.c								\
 				srcs/program/one_philo.c						\
 				srcs/program/death.c							\
 				srcs/program/eat.c								\
+				srcs/program/routine.c							\
 				srcs/utils/free.c								\
 				srcs/utils/time.c								\
 				srcs/utils/display.c							\

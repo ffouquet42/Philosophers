@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 08:57:57 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/11 15:20:08 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/13 11:56:36 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@
 # include <sys/time.h>
 # include <unistd.h>
 //
-# include <string.h>
-# include <stddef.h>
+// # include <string.h>
+// # include <stddef.h>
 
 
 //**********************************************//
@@ -34,6 +34,9 @@
 
 # define FORK 1
 # define DEATH 2
+# define EAT 3
+# define THINK 4
+# define SLEEP 5
 
 
 //**********************************************//
@@ -116,6 +119,11 @@ int		check_death(t_philo *philo);
 
 //----------------- eat.c ----------------//
 int		check_must_eat(t_philo *philo);
+
+//----------------- routine.c ----------------//
+void	routine(t_philo *philo);
+void	lock_fork(t_philo *philo);
+void	unlock_fork(t_philo *philo);
 
 
 //**********************************************//

@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 11:58:28 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/11 22:47:49 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/13 11:56:55 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	*loop(void *ptr)
 	else if ((philo->data_struct->nb_of_philo % 2 == 0) && (philo->id % 2 != 0))
 		wait(philo, philo->data_struct->time_to_eat * 1000);
 	while (!check_death(philo) && !check_must_eat(philo - (philo->id - 1)))
-		// actions
+		routine(philo);
 	return (NULL);
 }
 
