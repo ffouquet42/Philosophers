@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 08:57:57 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/13 11:56:36 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/13 13:07:34 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,8 +122,8 @@ int		check_must_eat(t_philo *philo);
 
 //----------------- routine.c ----------------//
 void	routine(t_philo *philo);
-void	lock_fork(t_philo *philo);
-void	unlock_fork(t_philo *philo);
+void	lock_fork(t_philo *philo, t_data *data);
+void	unlock_fork(t_philo *philo, t_data *data);
 
 
 //**********************************************//
