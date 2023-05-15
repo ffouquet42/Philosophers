@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 12:11:17 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/10 12:17:27 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/15 13:22:00 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	init_mutex(t_data *data)
 			return (1);
 		i++;
 	}
-	if (pthread_mutex_init(&data->write, NULL) ||
+	if (pthread_mutex_init(&data->display, NULL) ||
 		pthread_mutex_init(&data->check_must_eat, NULL) ||
 		pthread_mutex_init(&data->check_last_eat, NULL) ||
 		pthread_mutex_init(&data->check_death, NULL))

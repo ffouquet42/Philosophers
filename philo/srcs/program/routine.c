@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 11:31:32 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/13 13:12:29 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/15 13:24:02 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	routine(t_philo *philo) // data
 	{
 		if (!check_death(philo)) // test avec et sans ces lignes
 		{
-			// lock fork
+			lock_fork(philo, philo->data_struct);
 			pthread_mutex_lock(&philo->data_struct->check_last_eat);
 			philo->last_eat_time = get_time() - philo->data_struct->time;
 			pthread_mutex_unlock(&philo->data_struct->check_last_eat);
@@ -27,7 +27,7 @@ void	routine(t_philo *philo) // data
 			philo->nb_of_meals++;
 			pthread_mutex_unlock(&philo->data_struct->check_must_eat);
 			wait(philo, philo->data_struct->time_to_eat * 1000);
-			// unlock fork
+			unlock_fork(philo, philo->data_struct);
 		}
 	}
 	if (!check_death(philo) && !check_must_eat(philo - (philo->id - 1)))

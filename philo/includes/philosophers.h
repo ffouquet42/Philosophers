@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 08:57:57 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/13 13:07:34 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/15 13:12:13 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ typedef struct s_data
 	int				is_dead;
 	long			time;
 	pthread_mutex_t	*fork;
-	pthread_mutex_t	write;
+	pthread_mutex_t	display;
 	pthread_mutex_t	check_must_eat;
 	pthread_mutex_t	check_last_eat;
 	pthread_mutex_t	check_death;
