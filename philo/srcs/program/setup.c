@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 11:58:28 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/13 11:56:55 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/16 12:14:37 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ int	setup(char **argv)
 	philo = init_philo(data);
 	if (!philo)
 		return (free_data(data), 1);
-	if (threads_manager(data, philo))
-		return (free_structs(data, philo), 1);
+	threads_manager(data, philo);
 	return (free_structs(data, philo), 0);
 }

@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 08:57:57 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/15 13:12:13 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/16 12:09:50 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,6 @@
 # include <pthread.h>
 # include <sys/time.h>
 # include <unistd.h>
-//
-// # include <string.h>
-// # include <stddef.h>
 
 
 //**********************************************//
@@ -153,9 +150,5 @@ void	ft_bzero(void *s, size_t n);
 //----------------- ft_atoi.c ----------------//
 int		ft_atoi(char *str);
 
-
-
-// dev
-void	print_data(t_data *data);
 
 #endif
