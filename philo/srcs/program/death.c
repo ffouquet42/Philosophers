@@ -6,22 +6,18 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 14:48:14 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/16 17:00:05 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/16 17:12:42 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/philosophers.h"
 
-int	check_death(t_data *data) // OK DIFF | return (unlock(), x)
+int	check_death(t_data *data) // OK DIFF
 {
 	pthread_mutex_lock(&data->check_death);
 	if (!data->is_dead)
-	{
-		pthread_mutex_unlock(&data->check_death);
-		return (0);
-	}
-	pthread_mutex_unlock(&data->check_death);
-	return (1);
+		return (pthread_mutex_unlock(&data->check_death), 0);
+	return (pthread_mutex_unlock(&data->check_death), 1);
 }
 
 void	death_verification_loop(t_philo *philo, t_data *data) // OK
