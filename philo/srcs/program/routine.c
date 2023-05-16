@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 11:31:32 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/16 15:41:29 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/16 15:49:46 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	routine(t_philo *philo) // data + split function
 	usleep(500);
 }
 
-void	lock_fork(t_philo *philo, t_data *data) // !!!
+void	lock_fork(t_philo *philo, t_data *data) // OK
 {
 	if (philo->id == 1)
 	{
@@ -54,26 +54,22 @@ void	lock_fork(t_philo *philo, t_data *data) // !!!
 		pthread_mutex_lock(&data->fork[philo->id - 1]);
 		display(philo, FORK);
 		display(philo, FORK);
+		return ;
 	}
-	else
-	{
-		pthread_mutex_lock(&data->fork[philo->id - 1]);
-		pthread_mutex_lock(&data->fork[philo->id - 2]);
-		display(philo, FORK);
-		display(philo, FORK);
-	}
+	pthread_mutex_lock(&data->fork[philo->id - 1]);
+	pthread_mutex_lock(&data->fork[philo->id - 2]);
+	display(philo, FORK);
+	display(philo, FORK);
 }
 
-void	unlock_fork(t_philo *philo, t_data *data) // !!!
+void	unlock_fork(t_philo *philo, t_data *data) // OK
 {
 	if (philo->id == 1)
 	{
 		pthread_mutex_unlock(&data->fork[data->nb_of_philo - 1]);
 		pthread_mutex_unlock(&data->fork[philo->id - 1]);
+		return ;
 	}
-	else
-	{
-		pthread_mutex_unlock(&data->fork[philo->id - 1]);
-		pthread_mutex_unlock(&data->fork[philo->id - 2]);
-	}
+	pthread_mutex_unlock(&data->fork[philo->id - 1]);
+	pthread_mutex_unlock(&data->fork[philo->id - 2]);
 }
