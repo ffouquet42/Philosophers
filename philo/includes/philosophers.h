@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 08:57:57 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/16 15:21:44 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/16 16:26:53 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,17 +108,19 @@ void	threads_manager(t_data *data, t_philo *philo);
 void	*loop(void *ptr);
 
 //----------------- one_philo.c ----------------//
-void	one_philo(t_philo *philo);
+void	one_philo(t_philo *philo, t_data *data);
 
 //----------------- death.c ----------------//
-void	death_verification_loop(t_philo *philo);
-int		check_death(t_philo *philo);
+void	death_verification_loop(t_philo *philo, t_data *data);
+int		check_death(t_data *data);
+void	philo_died(t_philo *philo, t_data *data, int i);
 
 //----------------- eat.c ----------------//
-int		check_must_eat(t_philo *philo);
+int		check_must_eat(t_philo *philo, t_data *data);
 
 //----------------- routine.c ----------------//
-void	routine(t_philo *philo);
+void	routine_pt1(t_philo *philo, t_data *data);
+void	routine_pt2(t_philo *philo, t_data *data);
 void	lock_fork(t_philo *philo, t_data *data);
 void	unlock_fork(t_philo *philo, t_data *data);
 
@@ -133,10 +135,10 @@ void	free_structs(t_data *data, t_philo *philo);
 
 //----------------- time.c ----------------//
 long	get_time(void);
-void	wait(t_philo *philo, long long time_to_sleep);
+void	wait(t_philo *philo, t_data *data, long long time_to_sleep);
 
 //----------------- display.c ----------------//
-void	display(t_philo *philo, int action);
+void	display(t_philo *philo, t_data *data, int action);
 
 
 //**********************************************//

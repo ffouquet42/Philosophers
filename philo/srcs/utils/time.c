@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 12:50:04 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/16 15:33:01 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/16 16:24:13 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ long	get_time(void) // OK DIFF
 	return (current);
 }
 
-void	wait(t_philo *philo, long long time_to_sleep) // amy expl
+void	wait(t_philo *philo, t_data *data, long long time_to_sleep) // amy expl
 {
 	long long start_time;
 	
 	start_time = get_time();
-	while (((get_time() - start_time) * 1000) < time_to_sleep
-		&& !check_death(philo) && !check_must_eat(philo - (philo->id - 1)))
+	while (((get_time() - start_time) * 1000) < time_to_sleep &&
+		!check_death(data) && !check_must_eat(philo - (philo->id - 1), data))
 		usleep(50);
 }
