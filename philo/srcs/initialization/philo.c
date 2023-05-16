@@ -6,13 +6,13 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 13:35:47 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/10 13:47:11 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/16 15:35:36 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/philosophers.h"
 
-t_philo	*init_philo(t_data *data)
+t_philo	*init_philo(t_data *data) // OK
 {
 	t_philo	*philo;
 	int		i;

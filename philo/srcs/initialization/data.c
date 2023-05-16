@@ -6,13 +6,13 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 12:09:19 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/11 15:03:14 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/16 15:34:36 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/philosophers.h"
 
-t_data	*init_data(char **argv)
+t_data	*init_data(char **argv) // OK DIFF
 {
 	t_data *data;
 

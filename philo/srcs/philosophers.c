@@ -6,13 +6,13 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 08:59:24 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/16 12:09:57 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/16 15:34:08 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philosophers.h"
 
-int	main(int argc, char **argv)
+int	main(int argc, char **argv) // OK DIFF
 {
 	if (argc != 5 && argc != 6)
 		return (printf("Incorrect number of arguments\n"), 1);

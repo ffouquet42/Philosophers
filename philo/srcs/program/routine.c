@@ -6,17 +6,17 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 11:31:32 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/15 13:24:02 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/16 15:41:29 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/philosophers.h"
 
-void	routine(t_philo *philo) // data
+void	routine(t_philo *philo) // data + split function
 {
 	if (!check_death(philo) && !check_must_eat(philo - (philo->id - 1)))
 	{
-		if (!check_death(philo)) // test avec et sans ces lignes
+		if (!check_death(philo))
 		{
 			lock_fork(philo, philo->data_struct);
 			pthread_mutex_lock(&philo->data_struct->check_last_eat);
@@ -32,7 +32,7 @@ void	routine(t_philo *philo) // data
 	}
 	if (!check_death(philo) && !check_must_eat(philo - (philo->id - 1)))
 	{
-		if (!check_death(philo)) // test avec et sans ces lignes
+		if (!check_death(philo))
 		{
 			display(philo, SLEEP);
 			wait(philo, philo->data_struct->time_to_sleep * 1000);
@@ -40,13 +40,13 @@ void	routine(t_philo *philo) // data
 	}
 	if (!check_death(philo) && !check_must_eat(philo - (philo->id - 1)))
 	{
-		if (!check_death(philo)) // test avec et sans ces lignes
+		if (!check_death(philo))
 			display(philo, THINK);
 	}
 	usleep(500);
 }
 
-void	lock_fork(t_philo *philo, t_data *data)
+void	lock_fork(t_philo *philo, t_data *data) // !!!
 {
 	if (philo->id == 1)
 	{
@@ -64,7 +64,7 @@ void	lock_fork(t_philo *philo, t_data *data)
 	}
 }
 
-void	unlock_fork(t_philo *philo, t_data *data)
+void	unlock_fork(t_philo *philo, t_data *data) // !!!
 {
 	if (philo->id == 1)
 	{

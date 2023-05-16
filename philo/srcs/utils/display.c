@@ -6,13 +6,13 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 13:26:04 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/15 13:21:37 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/16 15:33:34 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/philosophers.h"
 
-void	display(t_philo *philo, int action)
+void	display(t_philo *philo, int action) // ! ->
 {
 	pthread_mutex_lock(&philo->data_struct->display);
 	if (!check_death(philo) && !check_must_eat(philo - (philo->id - 1)))

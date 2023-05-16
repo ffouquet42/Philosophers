@@ -6,13 +6,13 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 14:48:17 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/13 11:46:29 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/16 15:38:09 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/philosophers.h"
 
-int	check_must_eat(t_philo *philo)
+int	check_must_eat(t_philo *philo) // data
 {
 	int	i;
 

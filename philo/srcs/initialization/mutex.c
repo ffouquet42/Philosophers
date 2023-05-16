@@ -6,13 +6,13 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 12:11:17 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/15 13:22:00 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/16 15:34:50 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/philosophers.h"
 
-int	init_mutex(t_data *data)
+int	init_mutex(t_data *data) // OK DIFF
 {
 	int	i;
 

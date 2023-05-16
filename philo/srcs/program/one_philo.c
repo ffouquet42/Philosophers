@@ -6,13 +6,13 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 13:23:20 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/11 14:27:14 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/16 15:37:16 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/philosophers.h"
 
-void	one_philo(t_philo *philo)
+void	one_philo(t_philo *philo) // data
 {
 	display(philo, FORK);
 	pthread_mutex_lock(&philo->data_struct->check_death);
