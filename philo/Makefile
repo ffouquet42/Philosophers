@@ -20,8 +20,7 @@ CC			=	cc
 
 RM			=	rm -f
 
-#CFLAGS		=	-Wall -Wextra -Werror #-fsanitize=thread
-CFLAGS		=
+CFLAGS		=	-Wall -Wextra -Werror
 
 NAME		=	philo
 
