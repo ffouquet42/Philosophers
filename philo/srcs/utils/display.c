@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 13:26:04 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/16 17:04:18 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/17 12:28:21 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	display(t_philo *philo, t_data *data, int action) // !!!
 			- data->time, philo->id);
 	}
 	else if (action == DEATH && !check_must_eat(philo - (philo->id - 1), data))
-		printf("%ld %i died\n", get_time()
-			- data->time, philo->id);
+		printf("%ld %i died\n", get_time() - data->time, philo->id);
 	pthread_mutex_unlock(&data->display);
 }
