@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 08:57:57 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/16 16:26:53 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/17 13:00:49 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,27 @@
 //					DEFINES						//
 //**********************************************//
 
+//----------------- actions ----------------//
 # define FORK 1
 # define DEATH 2
 # define EAT 3
 # define THINK 4
 # define SLEEP 5
 
+//----------------- errors messages ----------------//
+# define E_ARG_NB "Incorrect number of arguments\n"
+# define E_POS_DIGIT "Argv must be positive numbers / digit only\n"
+# define E_INT_MAX "Be careful to not exceed the int max\n"
+# define E_NOT_ZERO "Argv can't be equal to 0\n"
+# define E_MALLOC "Malloc failed\n"
+# define E_MUTEX "Mutex init failed\n"
+
 
 //**********************************************//
 //					STRUCTURES					//
 //**********************************************//
 
+//----------------- data struct ----------------//
 typedef struct s_data
 {
 	int				nb_of_philo;
@@ -56,6 +66,7 @@ typedef struct s_data
 	pthread_mutex_t	check_death;
 }	t_data;
 
+//----------------- philo struct ----------------//
 typedef struct s_philo
 {
 	int				id;

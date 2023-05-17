@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 09:43:49 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/16 15:33:50 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/17 12:58:01 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ int	check_int_max_and_zero(char *str) // OK DIFF
 		i++;
 	}
 	if (res > INT_MAX)
-		return (printf("Be careful to not exceed the int max\n"), 1);
+		return (printf(E_INT_MAX), 1);
 	if (res == 0)
-		return (printf("Argv can't be equal to 0\n"), 1);
+		return (printf(E_NOT_ZERO), 1);
 	return (0);
 }
 
@@ -39,7 +39,7 @@ int	check_only_digit(char *str) // OK DIFF
 	while (str[i])
 	{
 		if (str[i] < '0' || str[i] > '9')
-			return (printf("Argv must be positive numbers / digit only\n"), 1);
+			return (printf(E_POS_DIGIT), 1);
 		i++;
 	}
 	return (0);
