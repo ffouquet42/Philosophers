@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 12:50:04 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/31 03:51:18 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/31 04:03:53 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,11 @@ long	get_time(void) // OK DIFF
 	return (current);
 }
 
-// creer sa propre fonction ft_usleep car la vraie fonction attend au minimum le temps qu'on lui indique, donc pas precis
+// creer sa propre fonction ft_usleep car la vraie fonction attend au minimum
+// le temps qu'on lui indique, donc pas precis
 void	my_wait(t_philo *philo, t_data *data, long long time_to_sleep) // OK ?
 {
-	long long start_time;
+	long long	start_time;
 	
 	start_time = get_time();
 	while (((get_time() - start_time) * 1000) < time_to_sleep &&
