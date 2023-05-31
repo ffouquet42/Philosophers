@@ -6,13 +6,13 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 09:43:49 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/31 05:20:51 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/31 05:48:21 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/philosophers.h"
 
-int	check_int_max_and_zero(char *str) // +
+int	check_int_max_and_zero(char *str)
 {
 	int		i;
 	long	res;
@@ -31,7 +31,7 @@ int	check_int_max_and_zero(char *str) // +
 	return (0);
 }
 
-int	check_only_digit(char *str) // +
+int	check_only_digit(char *str)
 {
 	int	i;
 
@@ -45,7 +45,7 @@ int	check_only_digit(char *str) // +
 	return (0);
 }
 
-int	parsing_argv(char **argv) // +
+int	parsing_argv(char **argv)
 {
 	int	i;
 

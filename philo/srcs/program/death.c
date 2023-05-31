@@ -6,21 +6,21 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 14:48:14 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/31 05:31:00 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/31 05:48:15 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/philosophers.h"
 
-int	check_death(t_data *data) // +
+int	check_death(t_data *data)
 {
-	pthread_mutex_lock(&data->check_death); // &
+	pthread_mutex_lock(&data->check_death);
 	if (!data->is_dead)
 		return (pthread_mutex_unlock(&data->check_death), 0);
 	return (pthread_mutex_unlock(&data->check_death), 1);
 }
 
-void	death_verification_loop(t_philo *philo, t_data *data) // ~
+void	death_verification_loop(t_philo *philo, t_data *data)
 {
 	int	i;
 
@@ -40,7 +40,7 @@ void	death_verification_loop(t_philo *philo, t_data *data) // ~
 	}
 }
 
-void	philo_died(t_philo *philo, t_data *data, int i) // ~
+void	philo_died(t_philo *philo, t_data *data, int i)
 {
 	pthread_mutex_unlock(&philo->data->check_last_eat);
 	pthread_mutex_lock(&philo->data->check_death);

@@ -6,13 +6,13 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 12:09:19 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/31 05:25:43 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/31 05:48:29 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/philosophers.h"
 
-t_data	*init_data(char **argv) // +
+t_data	*init_data(char **argv)
 {
 	t_data	*data;
 

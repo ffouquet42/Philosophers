@@ -6,13 +6,13 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 12:11:17 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/31 05:25:26 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/31 05:48:26 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/philosophers.h"
 
-int	init_mutex(t_data *data) // ~
+int	init_mutex(t_data *data)
 {
 	int	i;
 

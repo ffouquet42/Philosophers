@@ -6,13 +6,13 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 11:58:28 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/31 05:41:27 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/31 05:47:37 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/philosophers.h"
 
-void	*loop(void *ptr) // +
+void	*loop(void *ptr)
 {
 	t_philo	*philo;
 	t_data	*data;
@@ -35,18 +35,18 @@ void	*loop(void *ptr) // +
 	return (NULL);
 }
 
-void	threads_manager(t_data *data, t_philo *philo) // ~
+void	threads_manager(t_data *data, t_philo *philo)
 {
 	int	i;
 
 	i = 0;
 	while (i < data->nb_of_philo)
 	{
-		pthread_create(&philo[i].philo_thread, NULL, &loop, &philo[i]); // ?
+		pthread_create(&philo[i].philo_thread, NULL, &loop, &philo[i]);
 		i++;
 	}
 	i = 0;
-	usleep(50); // ?
+	usleep(50);
 	death_verification_loop(philo, data);
 	while (i < data->nb_of_philo)
 	{
@@ -56,7 +56,7 @@ void	threads_manager(t_data *data, t_philo *philo) // ~
 	return ;
 }
 
-int	setup(char **argv) // ~
+int	setup(char **argv)
 {
 	t_data	*data;
 	t_philo	*philo;

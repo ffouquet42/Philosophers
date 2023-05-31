@@ -6,13 +6,13 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 11:31:32 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/31 05:39:26 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/31 05:47:50 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/philosophers.h"
 
-void	routine_pt1(t_philo *philo, t_data *data) // +
+void	routine_pt1(t_philo *philo, t_data *data)
 {
 	if (!check_death(data) && !check_must_eat(philo - (philo->id - 1), data))
 	{
@@ -33,7 +33,7 @@ void	routine_pt1(t_philo *philo, t_data *data) // +
 	routine_pt2(philo, data);
 }
 
-void	routine_pt2(t_philo *philo, t_data *data) // +
+void	routine_pt2(t_philo *philo, t_data *data)
 {
 	if (!check_death(data) && !check_must_eat(philo - (philo->id - 1), data))
 	{
@@ -48,10 +48,10 @@ void	routine_pt2(t_philo *philo, t_data *data) // +
 		if (!check_death(data))
 			display(philo, data, THINK);
 	}
-	usleep(500); // ?
+	usleep(500);
 }
 
-void	lock_fork(t_philo *philo, t_data *data) // ~
+void	lock_fork(t_philo *philo, t_data *data)
 {
 	if (philo->id == 1)
 	{
@@ -67,7 +67,7 @@ void	lock_fork(t_philo *philo, t_data *data) // ~
 	display(philo, data, FORK);
 }
 
-void	unlock_fork(t_philo *philo, t_data *data) // ~
+void	unlock_fork(t_philo *philo, t_data *data)
 {
 	if (philo->id == 1)
 	{
