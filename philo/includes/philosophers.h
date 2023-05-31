@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 08:57:57 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/31 03:51:28 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/31 04:01:06 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 # include <pthread.h>
 # include <sys/time.h>
 # include <unistd.h>
-
 
 //**********************************************//
 //					DEFINES						//
@@ -43,7 +42,6 @@
 # define E_NOT_ZERO "Argv can't be equal to 0\n"
 # define E_MALLOC "Malloc failed\n"
 # define E_MUTEX "Mutex init failed\n"
-
 
 //**********************************************//
 //					STRUCTURES					//
@@ -76,14 +74,12 @@ typedef struct s_philo
 	pthread_t		philo_thread;
 }	t_philo;
 
-
 //**********************************************//
 //					PROTOTYPES					//
 //**********************************************//
 
 //----------------- philosophers.c ----------------//
 int		main(int argc, char **argv);
-
 
 //**********************************************//
 //					PARSING						//
@@ -93,7 +89,6 @@ int		main(int argc, char **argv);
 int		parsing_argv(char **argv);
 int		check_only_digit(char *str);
 int		check_int_max_and_zero(char *str);
-
 
 //**********************************************//
 //					INITIALIZATION				//
@@ -107,7 +102,6 @@ int		init_mutex(t_data *data);
 
 //----------------- philo.c ----------------//
 t_philo	*init_philo(t_data *data);
-
 
 //**********************************************//
 //					PROGRAM						//
@@ -135,7 +129,6 @@ void	routine_pt2(t_philo *philo, t_data *data);
 void	lock_fork(t_philo *philo, t_data *data);
 void	unlock_fork(t_philo *philo, t_data *data);
 
-
 //**********************************************//
 //					UTILS						//
 //**********************************************//
@@ -151,7 +144,6 @@ void	my_wait(t_philo *philo, t_data *data, long long time_to_sleep);
 //----------------- display.c ----------------//
 void	display(t_philo *philo, t_data *data, int action);
 
-
 //**********************************************//
 //					LIBFT						//
 //**********************************************//
@@ -162,6 +154,5 @@ void	ft_bzero(void *s, size_t n);
 
 //----------------- ft_atoi.c ----------------//
 int		ft_atoi(char *str);
-
 
 #endif
