@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 13:35:47 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/17 12:58:54 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/31 04:06:21 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_philo	*init_philo(t_data *data) // OK
 {
 	t_philo	*philo;
 	int		i;
-	
+
 	i = 0;
 	philo = ft_calloc(sizeof(t_philo), data->nb_of_philo);
 	if (!philo)

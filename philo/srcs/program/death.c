@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 14:48:14 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/16 17:12:42 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/31 04:06:08 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	check_death(t_data *data) // OK DIFF
 void	death_verification_loop(t_philo *philo, t_data *data) // OK
 {
 	int	i;
-	
+
 	while (!check_death(data))
 	{
 		i = 0;

@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 12:09:19 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/17 12:59:42 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/31 04:06:35 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_data	*init_data(char **argv) // OK DIFF
 {
-	t_data *data;
+	t_data	*data;
 
 	data = ft_calloc(sizeof(t_data), 1);
 	if (!data)

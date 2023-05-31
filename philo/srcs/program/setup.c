@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 11:58:28 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/31 03:51:51 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/31 04:05:45 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*loop(void *ptr) // OK DIFF
 {
-	t_philo *philo;
+	t_philo	*philo;
 	t_data	*data;
-	
+
 	philo = ptr;
 	data = philo->data_struct;
 	if (data->nb_of_philo == 1)
@@ -38,7 +38,7 @@ void	*loop(void *ptr) // OK DIFF
 void	threads_manager(t_data *data, t_philo *philo) // OK
 {
 	int	i;
-	
+
 	i = 0;
 	while (i < data->nb_of_philo)
 	{
@@ -60,7 +60,7 @@ int	setup(char **argv) // OK
 {
 	t_data	*data;
 	t_philo	*philo;
-	
+
 	data = init_data(argv);
 	if (!data)
 		return (1);
