@@ -6,13 +6,13 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 13:35:47 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/31 04:06:21 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/31 05:25:18 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/philosophers.h"
 
-t_philo	*init_philo(t_data *data) // OK
+t_philo	*init_philo(t_data *data) // ~
 {
 	t_philo	*philo;
 	int		i;
@@ -24,9 +24,7 @@ t_philo	*init_philo(t_data *data) // OK
 	while (i < data->nb_of_philo)
 	{
 		philo[i].id = i + 1;
-		philo[i].nb_of_meals = 0;
-		philo[i].last_eat_time = 0;
-		philo[i].data_struct = data;
+		philo[i].data = data;
 		i++;
 	}
 	return (philo);

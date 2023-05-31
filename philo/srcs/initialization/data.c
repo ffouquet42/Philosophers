@@ -6,13 +6,13 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 12:09:19 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/31 04:06:35 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/31 05:25:43 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/philosophers.h"
 
-t_data	*init_data(char **argv) // OK DIFF
+t_data	*init_data(char **argv) // +
 {
 	t_data	*data;
 
@@ -24,8 +24,6 @@ t_data	*init_data(char **argv) // OK DIFF
 	data->time_to_eat = ft_atoi(argv[3]);
 	data->time_to_sleep = ft_atoi(argv[4]);
 	data->time = get_time();
-	data->is_dead = 0;
-	data->must_eat = 0;
 	if (argv[5])
 		data->must_eat = ft_atoi(argv[5]);
 	data->fork = ft_calloc(sizeof(pthread_mutex_t), data->nb_of_philo);

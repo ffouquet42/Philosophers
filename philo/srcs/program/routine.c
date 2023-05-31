@@ -6,41 +6,41 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 11:31:32 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/31 04:04:39 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/31 05:39:26 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/philosophers.h"
 
-void	routine_pt1(t_philo *philo, t_data *data) // OK
+void	routine_pt1(t_philo *philo, t_data *data) // +
 {
 	if (!check_death(data) && !check_must_eat(philo - (philo->id - 1), data))
 	{
 		if (!check_death(data))
 		{
-			lock_fork(philo, philo->data_struct);
-			pthread_mutex_lock(&philo->data_struct->check_last_eat);
-			philo->last_eat_time = get_time() - philo->data_struct->time;
-			pthread_mutex_unlock(&philo->data_struct->check_last_eat);
+			lock_fork(philo, philo->data);
+			pthread_mutex_lock(&philo->data->check_last_eat);
+			philo->last_eat_time = get_time() - philo->data->time;
+			pthread_mutex_unlock(&philo->data->check_last_eat);
 			display(philo, data, EAT);
-			pthread_mutex_lock(&philo->data_struct->check_must_eat);
+			pthread_mutex_lock(&philo->data->check_must_eat);
 			philo->nb_of_meals++;
-			pthread_mutex_unlock(&philo->data_struct->check_must_eat);
-			my_wait(philo, data, philo->data_struct->time_to_eat * 1000);
-			unlock_fork(philo, philo->data_struct);
+			pthread_mutex_unlock(&philo->data->check_must_eat);
+			my_wait(philo, data, philo->data->time_to_eat * 1000);
+			unlock_fork(philo, philo->data);
 		}
 	}
 	routine_pt2(philo, data);
 }
 
-void	routine_pt2(t_philo *philo, t_data *data) // OK
+void	routine_pt2(t_philo *philo, t_data *data) // +
 {
 	if (!check_death(data) && !check_must_eat(philo - (philo->id - 1), data))
 	{
 		if (!check_death(data))
 		{
 			display(philo, data, SLEEP);
-			my_wait(philo, data, philo->data_struct->time_to_sleep * 1000);
+			my_wait(philo, data, philo->data->time_to_sleep * 1000);
 		}
 	}
 	if (!check_death(data) && !check_must_eat(philo - (philo->id - 1), data))
@@ -48,10 +48,10 @@ void	routine_pt2(t_philo *philo, t_data *data) // OK
 		if (!check_death(data))
 			display(philo, data, THINK);
 	}
-	usleep(500);
+	usleep(500); // ?
 }
 
-void	lock_fork(t_philo *philo, t_data *data) // OK
+void	lock_fork(t_philo *philo, t_data *data) // ~
 {
 	if (philo->id == 1)
 	{
@@ -67,7 +67,7 @@ void	lock_fork(t_philo *philo, t_data *data) // OK
 	display(philo, data, FORK);
 }
 
-void	unlock_fork(t_philo *philo, t_data *data) // OK
+void	unlock_fork(t_philo *philo, t_data *data) // ~
 {
 	if (philo->id == 1)
 	{

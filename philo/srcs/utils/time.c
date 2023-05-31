@@ -6,13 +6,13 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 12:50:04 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/31 04:07:46 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/31 05:43:06 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/philosophers.h"
 
-long	get_time(void) // OK DIFF
+long	get_time(void) // +
 {
 	struct timeval	time;
 	long			current;
@@ -24,7 +24,7 @@ long	get_time(void) // OK DIFF
 
 // creer sa propre fonction ft_usleep car la vraie fonction attend au minimum
 // le temps qu'on lui indique, donc pas precis
-void	my_wait(t_philo *philo, t_data *data, long long time_to_sleep) // OK ?
+void	my_wait(t_philo *philo, t_data *data, long long time_to_sleep) // -
 {
 	long long	start_time;
 

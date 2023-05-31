@@ -6,13 +6,13 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 12:26:26 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/31 04:03:59 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/31 05:42:28 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/philosophers.h"
 
-void	free_data(t_data *data) // OK
+void	free_data(t_data *data) // ~
 {
 	int	i;
 
@@ -23,7 +23,7 @@ void	free_data(t_data *data) // OK
 		i++;
 	}
 	free(data->fork);
-	pthread_mutex_destroy(&data->display);
+	pthread_mutex_destroy(&data->display); // &
 	pthread_mutex_destroy(&data->check_must_eat);
 	pthread_mutex_destroy(&data->check_last_eat);
 	pthread_mutex_destroy(&data->check_death);

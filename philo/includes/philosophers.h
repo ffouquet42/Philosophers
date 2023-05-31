@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 08:57:57 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/31 04:01:06 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/31 05:15:15 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ typedef struct s_philo
 	int				id;
 	int				nb_of_meals;
 	long			last_eat_time;
-	struct s_data	*data_struct;
+	struct s_data	*data;
 	pthread_t		philo_thread;
 }	t_philo;
 
