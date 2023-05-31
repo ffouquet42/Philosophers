@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 08:57:57 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/17 13:00:49 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/31 03:51:28 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,7 +146,7 @@ void	free_structs(t_data *data, t_philo *philo);
 
 //----------------- time.c ----------------//
 long	get_time(void);
-void	wait(t_philo *philo, t_data *data, long long time_to_sleep);
+void	my_wait(t_philo *philo, t_data *data, long long time_to_sleep);
 
 //----------------- display.c ----------------//
 void	display(t_philo *philo, t_data *data, int action);

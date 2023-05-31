@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 11:58:28 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/16 16:25:46 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/31 03:51:51 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ void	*loop(void *ptr) // OK DIFF
 	if (data->nb_of_philo % 2 != 0)
 	{
 		if (philo->id == data->nb_of_philo)
-			wait(philo, data, (data->time_to_eat * 1000) * 2);
+			my_wait(philo, data, (data->time_to_eat * 1000) * 2);
 		else if (philo->id % 2 != 0)
-			wait(philo, data, data->time_to_eat * 1000);
+			my_wait(philo, data, data->time_to_eat * 1000);
 	}
 	else if ((data->nb_of_philo % 2 == 0) && (philo->id % 2 != 0))
-		wait(philo, data, data->time_to_eat * 1000);
+		my_wait(philo, data, data->time_to_eat * 1000);
 	while (!check_death(data) && !check_must_eat(philo - (philo->id - 1), data))
 		routine_pt1(philo, data);
 	return (NULL);

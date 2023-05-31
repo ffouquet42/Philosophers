@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 11:31:32 by fllanet           #+#    #+#             */
-/*   Updated: 2023/05/17 13:10:26 by fllanet          ###   ########.fr       */
+/*   Updated: 2023/05/31 03:51:43 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	routine_pt1(t_philo *philo, t_data *data) // OK
 			pthread_mutex_lock(&philo->data_struct->check_must_eat);
 			philo->nb_of_meals++;
 			pthread_mutex_unlock(&philo->data_struct->check_must_eat);
-			wait(philo, data, philo->data_struct->time_to_eat * 1000);
+			my_wait(philo, data, philo->data_struct->time_to_eat * 1000);
 			unlock_fork(philo, philo->data_struct);
 		}
 	}
@@ -40,7 +40,7 @@ void	routine_pt2(t_philo *philo, t_data *data) // OK
 		if (!check_death(data))
 		{
 			display(philo, data, SLEEP);
-			wait(philo, data, philo->data_struct->time_to_sleep * 1000);
+			my_wait(philo, data, philo->data_struct->time_to_sleep * 1000);
 		}
 	}
 	if (!check_death(data) && !check_must_eat(philo - (philo->id - 1), data))
